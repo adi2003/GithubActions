@@ -1,0 +1,18 @@
+name: Experience Coloring
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  color_pull_request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Pull Request Color
+        uses: GithubActions/Experience_Colouring@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
